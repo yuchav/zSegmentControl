@@ -205,9 +205,9 @@ SegmentControl.prototype = {
         var boxWidth = this.boxWidth;
         var that = this;
 
-        var eventName = ("ontouchstart" in document)?'touchstart':'mousedown';
+        //var eventName = ("ontouchstart" in document)?'touchstart':'mousedown';
 
-        box.addEventListener(eventName, function(eventObject) {
+        box.addEventListener('click', function(eventObject) {
             if (eventObject.target.tagName === 'LI') {
                 var li = eventObject.target;
                 if (li.classList.contains('active')) {
