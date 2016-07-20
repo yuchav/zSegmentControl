@@ -207,8 +207,21 @@ SegmentControl.prototype = {
 
         //var eventName = ("ontouchstart" in document)?'touchstart':'mousedown';
 
-        box.addEventListener('click', function(eventObject) {
+        var touchPoint = 0;
+
+        box.addEventListener('touchstart', function(eventObject) {
+            touchPoint = eventObject.changedTouches[0].clientX;
+        });
+
+        box.addEventListener('touchend', function(eventObject) {
+
             if (eventObject.target.tagName === 'LI') {
+
+                //detect touch point move
+                if(Math.abs(eventObject.changedTouches[0].clientX - touchPoint) > 30){
+                    return;
+                }
+
                 var li = eventObject.target;
                 if (li.classList.contains('active')) {
                     eventObject.stopPropagation();
