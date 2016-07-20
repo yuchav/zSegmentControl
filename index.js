@@ -218,7 +218,7 @@ SegmentControl.prototype = {
             if (eventObject.target.tagName === 'LI') {
 
                 //detect touch point move
-                if(Math.abs(eventObject.changedTouches[0].clientX - touchPoint) > 30){
+                if(Math.abs(eventObject.changedTouches[0].clientX - touchPoint) > 5){
                     return;
                 }
 
