@@ -109,7 +109,7 @@ button{margin:10% auto;min-width:30%;display:block;background:#fff;border:1px so
 
     sc.tabTo(6);
 
-    document.getElementById('button').addEventListener('click', function() {
+    document.getElementById('button').addEventListener('touchstart', function() {
         var nextIndex = sc.index + 1;
         if(sc.list[nextIndex]){
             sc.tabTo(nextIndex);
