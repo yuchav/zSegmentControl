@@ -275,16 +275,15 @@
         return defaultOptions;
     }
 
-    //Support AMD && CMD
+    //Support CMD &&  AMD && javaScript Module
     if (typeof module !== 'undefined' && typeof exports === 'object' && define.cmd) {
         module.exports = SegmentControl;
     } else if (typeof define === 'function' && define.amd) {
         define(function() {
-            return SegmentControl; });
+            return SegmentControl;
+        });
     } else {
-        this.SegmentControl = SegmentControl;
+        var _global = (typeof window !== 'undefined' ? window : global);
+        _global.SegmentControl = SegmentControl;
     }
-}).call(function() {
-    return this || (typeof window !== 'undefined' ? window : global);
-
-});
+})();
