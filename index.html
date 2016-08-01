@@ -7,7 +7,7 @@
     <title>SegmentControl</title>
 </head>
 <style>
-button{margin:10% auto;min-width:30%;display:block;background:#fff;border:1px solid #ccc;padding:2%;}
+.button{display:block;margin:10% auto;min-width:30%;text-align:center;background:#fff;border:1px solid #ccc;padding:2%;}
 </style>
 
 <body>
@@ -74,7 +74,7 @@ button{margin:10% auto;min-width:30%;display:block;background:#fff;border:1px so
 
     <div id="zSegmentControl"></div>
 
-    <button id="button">NEXT</button>
+    <div id="button" class="button">NEXT</div>
 
     <script src="./index.js"></script>
     <script type="text/javascript">
@@ -112,7 +112,8 @@ button{margin:10% auto;min-width:30%;display:block;background:#fff;border:1px so
     document.getElementById('button').addEventListener('touchstart', function() {
         var nextIndex = sc.index + 1;
         if(sc.list[nextIndex]){
-            sc.tabTo(nextIndex);
+            sc.tabTo(nextIndex,function(tab){
+            });
         }
     })
     </script>
